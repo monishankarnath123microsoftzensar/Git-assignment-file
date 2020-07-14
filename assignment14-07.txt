@@ -384,5 +384,25 @@ To https://github.com/monishankarnath123microsoftzensar/testing-microsofttrainin
    ed2f243..ab3fbaf  master -> master
 
 hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git clone https://github.com/Dipanjan59173/git-Dipanjan
+Cloning into 'git-Dipanjan'...
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 7 (delta 0), reused 7 (delta 0), pack-reused 0
+Unpacking objects: 100% (7/7), 750 bytes | 1024 bytes/s, done.
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ ls
+git-Dipanjan/  home.html  index.html  Instruction.txt  README.md  style.css
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ cd git-Dipanjan
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing/git-Dipanjan (master)
+$ ls
+instruction.text  README.md
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing/git-Dipanjan (master)
 $
 
