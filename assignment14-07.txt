@@ -1,0 +1,408 @@
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ code style.css
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git --version
+git version 2.27.0.windows.1
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git config --edit --global
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ ls
+index.html  Instruction.txt  README.md  style.css
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git add style.css
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   style.css
+
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git log
+commit ed2f24346cd55950d007945c11fa3684a984c4fc (HEAD -> master, origin/master)
+Author: monishankar nath <monishankar.nath@zensar.com>
+Date:   Tue Jul 14 17:11:14 2020 +0530
+
+    Add css file
+
+commit fe1e172ee2adcf5f9e278bf11967b66dd43f1b3f (feature)
+Author: monishankar nath <monishankar.nath@zensar.com>
+Date:   Tue Jul 14 16:45:33 2020 +0530
+
+    Add table in index.html
+
+commit b946a39d5ed5560be5f827b32790bff980029845 (test-branch)
+Author: monishankarnath123microsoftzensar <68274796+monishankarnath123microsoftzensar@users.noreply.github.com>
+Date:   Tue Jul 14 16:00:53 2020 +0530
+
+    Make a change README.md
+
+commit a77090a1401864c6ae6c4d5d98233b14a4f7e125
+Author: monishankar nath <monishankar.nath@zensar.com>
+Date:   Tue Jul 14 15:52:19 2020 +0530
+
+    Add list in index.HTML
+
+commit dfcc3f149601a431deb4fee7ed74c4c69334ee95
+Author: monishankar nath <monishankar.nath@zensar.com>
+Date:   Tue Jul 14 14:31:33 2020 +0530
+
+    Testing
+
+commit bb67e4a0a8cd3d3394ffbb670f34df37feed9b2b
+Author: monishankar nath <monishankar.nath@zensar.com>
+Date:   Tue Jul 14 14:28:11 2020 +0530
+
+    Testing
+
+commit efdf69e885885ee1415dde2429349a285f352cf4
+Author: monishankar nath <monishankar.nath@zensar.com>
+Date:   Tue Jul 14 14:24:29 2020 +0530
+
+    Testing
+
+commit b8d8311dac3cf9e80224a1f7a906c920538ecd36
+Author: monishankar nath <monishankar.nath@zensar.com>
+Date:   Tue Jul 14 12:31:07 2020 +0530
+
+    Create Readme file for testing
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git log --oneline
+ed2f243 (HEAD -> master, origin/master) Add css file
+fe1e172 (feature) Add table in index.html
+b946a39 (test-branch) Make a change README.md
+a77090a Add list in index.HTML
+dfcc3f1 Testing
+bb67e4a Testing
+efdf69e Testing
+b8d8311 Create Readme file for testing
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git reflog
+ed2f243 (HEAD -> master, origin/master) HEAD@{0}: commit: Add css file
+fe1e172 (feature) HEAD@{1}: checkout: moving from feature to master
+fe1e172 (feature) HEAD@{2}: merge master: Fast-forward
+b946a39 (test-branch) HEAD@{3}: checkout: moving from master to feature
+fe1e172 (feature) HEAD@{4}: checkout: moving from test-branch to master
+b946a39 (test-branch) HEAD@{5}: checkout: moving from master to test-branch
+fe1e172 (feature) HEAD@{6}: commit: Add table in index.html
+b946a39 (test-branch) HEAD@{7}: checkout: moving from feature to master
+b946a39 (test-branch) HEAD@{8}: checkout: moving from master to feature
+b946a39 (test-branch) HEAD@{9}: pull: Fast-forward
+a77090a HEAD@{10}: commit: Add list in index.HTML
+dfcc3f1 HEAD@{11}: commit: Testing
+bb67e4a HEAD@{12}: commit: Testing
+efdf69e HEAD@{13}: commit: Testing
+b8d8311 HEAD@{14}: reset: moving to HEAD~1
+79a95db HEAD@{15}: commit: Modify Instruction.txt
+b8d8311 HEAD@{16}: commit (initial): Create Readme file for testing
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git diff master feature
+diff --git a/style.css b/style.css
+deleted file mode 100644
+index e72af68..0000000
+--- a/style.css
++++ /dev/null
+@@ -1,3 +0,0 @@
+-body{
+-    background = blue;
+-}
+\ No newline at end of file
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git diff master test-branch
+diff --git a/index.html b/index.html
+index 7c1d0f6..44047fb 100644
+--- a/index.html
++++ b/index.html
+@@ -5,13 +5,6 @@
+ <body>
+ <h2>Hello</h2>
+ <li> Football </li>
+-<table border="2">
+-<tr>
+-<td>EmpID</td>
+-<td>EmpName</td>
+-</tr>
+-<tr><td></td><td></td></tr>
+-<tr><td></td><td></td></tr>
+ </body>
+ </html>
+
+diff --git a/style.css b/style.css
+deleted file mode 100644
+index e72af68..0000000
+--- a/style.css
++++ /dev/null
+@@ -1,3 +0,0 @@
+-body{
+-    background = blue;
+-}
+\ No newline at end of file
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git branch test2
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git branch
+  feature
+* master
+  test-branch
+  test2
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git checkout test2
+Switched to branch 'test2'
+M       style.css
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (test2)
+$ ls
+index.html  Instruction.txt  README.md  style.css
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (test2)
+$ code style.css
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (test2)
+$ code index.html
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (test2)
+$ git branch
+  feature
+  master
+  test-branch
+* test2
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (test2)
+$ git status
+On branch test2
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   style.css
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (test2)
+$ git add .
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (test2)
+$ git commit -m "Link style.css to index.html"
+[test2 5669002] Link style.css to index.html
+ 2 files changed, 7 insertions(+), 2 deletions(-)
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (test2)
+$ git status
+On branch test2
+nothing to commit, working tree clean
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (test2)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git merge test2
+Updating ed2f243..5669002
+Fast-forward
+ index.html | 2 ++
+ style.css  | 7 +++++--
+ 2 files changed, 7 insertions(+), 2 deletions(-)
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git commit -m "Commit to push final update"
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git checkout feature
+Switched to branch 'feature'
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (feature)
+$ code index.html
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (feature)
+$ code home.html
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (feature)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ code index.html
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git checkout feature
+error: Your local changes to the following files would be overwritten by checkout:
+        index.html
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git add .
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   home.html
+        modified:   index.html
+
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git checkout feature
+error: Your local changes to the following files would be overwritten by checkout:
+        index.html
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git commit -m "Change table content"
+[master 6662560] Change table content
+ 2 files changed, 10 insertions(+), 1 deletion(-)
+ create mode 100644 home.html
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git checkout feature
+Switched to branch 'feature'
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (feature)
+$ code home.html
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (feature)
+$ git add .
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (feature)
+$ git commit -m "Add home.html"
+[feature 45f2bfa] Add home.html
+ 1 file changed, 10 insertions(+)
+ create mode 100644 home.html
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (feature)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git merge feature
+CONFLICT (add/add): Merge conflict in home.html
+Auto-merging home.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master|MERGING)
+$ code home.html
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master|MERGING)
+$ code home.html
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master|MERGING)
+$ git merge feature
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master|MERGING)
+$ git checkout master
+error: you need to resolve your current index first
+home.html: needs merge
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master|MERGING)
+$ code home.html
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master|MERGING)
+$ git add .
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master|MERGING)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        modified:   home.html
+
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master|MERGING)
+$ git commit -m "Edit home.html"
+[master ab3fbaf] Edit home.html
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git push
+Enumerating objects: 19, done.
+Counting objects: 100% (18/18), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (14/14), 1.54 KiB | 314.00 KiB/s, done.
+Total 14 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), completed with 2 local objects.
+To https://github.com/monishankarnath123microsoftzensar/testing-microsofttraining.git
+   ed2f243..ab3fbaf  master -> master
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ git clone https://github.com/Dipanjan59173/git-Dipanjan
+Cloning into 'git-Dipanjan'...
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 7 (delta 0), reused 7 (delta 0), pack-reused 0
+Unpacking objects: 100% (7/7), 750 bytes | 1024 bytes/s, done.
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ ls
+git-Dipanjan/  home.html  index.html  Instruction.txt  README.md  style.css
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing (master)
+$ cd git-Dipanjan
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing/git-Dipanjan (master)
+$ ls
+instruction.text  README.md
+
+hp@LAPTOP-KIFD9N1G MINGW64 /e/Dotnettraining/Testing/git-Dipanjan (master)
+$
+
